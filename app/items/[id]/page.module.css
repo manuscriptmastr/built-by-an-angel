@@ -1,0 +1,25 @@
+.item-detail {
+  background-color: white;
+  border: 0.5rem solid var(--color-pink-50);
+  border-radius: 0.5rem;
+  max-width: 75ch;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+}
+
+.header {
+  margin-top: 0;
+}
+
+.item-button {
+  background-color: var(--color-pink-50);
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.5rem;
+}

@@ -1,0 +1,14 @@
+:root {
+  --color-pink-30: pink;
+  --color-pink-50: palevioletred;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
