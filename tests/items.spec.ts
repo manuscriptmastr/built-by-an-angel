@@ -6,7 +6,7 @@ test("Item List page displays a list of items", async ({ page }) => {
   await expect(
     page.getByRole("heading", {
       level: 1,
-      name: /welcome to ga-linda's closet!/i,
+      name: /welcome to built by an angel!/i,
     })
   ).toBeVisible();
   await page.waitForSelector("li");
