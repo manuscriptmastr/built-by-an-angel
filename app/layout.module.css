@@ -11,14 +11,14 @@
 }
 
 .main {
-  background-color: var(--color-pink-30);
+  background-color: var(--color-gold-30);
   padding: 2rem;
   flex: 1;
 }
 
 .header,
 .footer {
-  background-color: var(--color-pink-50);
+  background-color: var(--color-gold-50);
   flex-shrink: 0;
   padding: 2rem;
 }

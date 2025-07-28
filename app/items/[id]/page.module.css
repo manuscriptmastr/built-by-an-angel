@@ -1,6 +1,6 @@
 .item-detail {
   background-color: white;
-  border: 0.5rem solid var(--color-pink-50);
+  border: 0.5rem solid var(--color-gold-50);
   border-radius: 0.5rem;
   max-width: 75ch;
   margin-left: auto;
@@ -13,7 +13,7 @@
 }
 
 .item-button {
-  background-color: var(--color-pink-50);
+  background-color: var(--color-gold-50);
   border: none;
   border-radius: 0.5rem;
   color: white;
