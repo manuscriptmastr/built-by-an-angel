@@ -3,6 +3,10 @@
   text-align: center;
 }
 
+.subheader {
+  text-align: center;
+}
+
 .item-list {
   max-width: 120ch;
   margin-left: auto;

@@ -36,7 +36,7 @@ export default function RootLayout({
         </header>
         <main className={styles.main}>{children}</main>
         <footer className={styles.footer}>
-          Made with love by Joshua Martin from data by friends.
+          Made with love by Joshua Martin.
         </footer>
       </body>
     </html>

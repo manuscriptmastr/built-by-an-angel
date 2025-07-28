@@ -16,6 +16,7 @@ export default function ItemListPage() {
   return (
     <>
       <h1 className={styles.header}>Welcome to Built By An Angel!</h1>
+      <h2 className={styles.subheader}>Angels for hire</h2>
       <div className={styles["item-list"]}>
         <ItemList items={items} />
       </div>

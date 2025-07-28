@@ -2,7 +2,7 @@ import { ITEMS } from "@/app/items";
 
 export const GET = async (
   req: Request,
-  { params }: { params: Promise<{ id: string }> },
+  { params }: { params: Promise<{ id: string }> }
 ) => {
   const { id } = await params;
   const searchId = parseInt(id, 10);
