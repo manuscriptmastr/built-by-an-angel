@@ -5,9 +5,6 @@
   grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
   list-style: none;
   padding: 0;
-  /* max-width: 120ch;
-  margin-left: auto;
-  margin-right: auto; */
 }
 
 .item-card {
