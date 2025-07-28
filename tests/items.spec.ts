@@ -26,6 +26,6 @@ test("Clicking on an item navigates to Item Detail", async ({ page }) => {
     FIRST_ITEM.description
   );
   await expect(
-    page.getByRole("button", { name: `Add to cart — ${FIRST_ITEM.price}` })
+    page.getByRole("button", { name: `Hire — ${FIRST_ITEM.price}` })
   ).toBeVisible();
 });

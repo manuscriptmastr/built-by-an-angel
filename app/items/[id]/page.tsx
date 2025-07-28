@@ -21,9 +21,7 @@ export default function ItemDetailPage() {
           <h1 className={styles.header}>{item.title}</h1>
           <img src={item.image.src} alt={item.image.alt} />
           <p>{item.description}</p>
-          <button className={styles["item-button"]}>
-            Add to cart — {item.price}
-          </button>
+          <button className={styles["item-button"]}>Hire — {item.price}</button>
         </article>
       )}
     </>
