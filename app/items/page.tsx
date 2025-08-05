@@ -1,25 +1,43 @@
 "use client";
 
-import { Item } from "@/app/models/item";
-import { useEffect, useState } from "react";
-import { ItemList } from "../components/item-list";
+import { useState } from "react";
 import styles from "./page.module.css";
 
+const API = "https://cataas.com";
+
 export default function ItemListPage() {
-  const [items, setItems] = useState<Item[]>([]);
-  useEffect(() => {
-    fetch("/api/items")
-      .then((res) => res.json())
-      .then(setItems);
-  }, []);
+  const [query, setQuery] = useState("");
+  const [result, setResult] = useState("");
+
+  const handleQueryInput = (e: React.FormEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    setQuery(e.currentTarget.value);
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const requestUrl = query.length ? `${API}/cat/says/${query}` : `${API}/cat`;
+    const image = await fetch(requestUrl).then((res) => res.blob());
+    const imageUrl = URL.createObjectURL(image);
+    setResult(imageUrl);
+  };
 
   return (
     <>
-      <h1 className={styles.header}>Welcome to Built By An Angel!</h1>
-      <h2 className={styles.subheader}>Angels for hire</h2>
-      <div className={styles["item-list"]}>
-        <ItemList items={items} />
-      </div>
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <input
+          type="search"
+          name="search"
+          id="search"
+          placeholder="Search for a cat"
+          className={styles["search-input"]}
+          onInput={handleQueryInput}
+        />
+        <button type="submit" className={styles["submit-button"]}>
+          Find a Cat
+        </button>
+      </form>
+      {result && <img src={result} alt="Random cat" />}
     </>
   );
 }

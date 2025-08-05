@@ -3,12 +3,24 @@
   text-align: center;
 }
 
-.subheader {
-  text-align: center;
+.form {
+  background-color: var(--color-background);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
 }
 
-.item-list {
-  max-width: 120ch;
-  margin-left: auto;
-  margin-right: auto;
+.search-input {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.submit-button {
+  background-color: var(--color-primary);
+  border-radius: 0.5rem;
+  color: white;
+  font-weight: 700;
+  padding: 0.5rem;
 }

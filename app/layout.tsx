@@ -29,15 +29,10 @@ export default function RootLayout({
       <body
         className={`${styles.body} ${geistSans.variable} ${geistMono.variable}`}
       >
-        <header className={styles.header}>
-          <Link href="/">
-            <h2>Built By An Angel</h2>
-          </Link>
+        <header>
+          <img src="/images/logo.webp" alt="Logo" />
         </header>
         <main className={styles.main}>{children}</main>
-        <footer className={styles.footer}>
-          Made with love by Joshua Martin.
-        </footer>
       </body>
     </html>
   );

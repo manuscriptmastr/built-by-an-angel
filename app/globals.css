@@ -1,6 +1,7 @@
 :root {
-  --color-gold-30: gold;
-  --color-gold-50: goldenrod;
+  --color-primary: #7a5d58;
+  --color-accent: #ef5a50;
+  --color-background: #d2ac92;
 }
 
 *,
