@@ -29,7 +29,7 @@ export default function RootLayout({
       <body
         className={`${styles.body} ${geistSans.variable} ${geistMono.variable}`}
       >
-        <header>
+        <header className={styles.header}>
           <img src="/images/logo.webp" alt="Logo" />
         </header>
         <main className={styles.main}>{children}</main>

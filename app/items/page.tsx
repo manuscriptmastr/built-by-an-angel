@@ -7,7 +7,7 @@ const API = "https://cataas.com";
 
 export default function ItemListPage() {
   const [query, setQuery] = useState("");
-  const [result, setResult] = useState("");
+  const [results, setResults] = useState<string[]>([]);
 
   const handleQueryInput = (e: React.FormEvent<HTMLInputElement>) => {
     e.preventDefault();
@@ -19,7 +19,7 @@ export default function ItemListPage() {
     const requestUrl = query.length ? `${API}/cat/says/${query}` : `${API}/cat`;
     const image = await fetch(requestUrl).then((res) => res.blob());
     const imageUrl = URL.createObjectURL(image);
-    setResult(imageUrl);
+    setResults([imageUrl, ...results]);
   };
 
   return (
@@ -37,7 +37,9 @@ export default function ItemListPage() {
           Find a Cat
         </button>
       </form>
-      {result && <img src={result} alt="Random cat" />}
+      {results.map((result) => (
+        <img key={result} src={result} alt="Random cat" />
+      ))}
     </>
   );
 }
