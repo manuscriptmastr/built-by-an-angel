@@ -4,22 +4,27 @@ import { useState } from "react";
 import { Cat } from "./models/cat";
 import { CatList } from "./components/cat-list";
 import { CatSearchBar } from "./components/cat-search-bar";
-
-const API = "https://cataas.com";
-
-export const getCatByText = async (text: string) => {
-  const blob = await fetch(
-    text.length ? `${API}/cat/says/${text}` : `${API}/cat`
-  ).then((res) => res.blob());
-  const image = URL.createObjectURL(blob);
-  return { caption: text, id: image, image };
-};
+import {
+  getCat,
+  getCatByTag,
+  getCatByTagAndText,
+  getCatByText,
+} from "./api/cat";
+import { cond } from "ramda";
 
 export default function Home() {
   const [cats, setCats] = useState<Cat[]>([]);
 
-  const handleSubmit = async ({ text }: { text: string }) => {
-    const cat = await getCatByText(text);
+  const handleSubmit = async ({ tag, text }: { tag: string; text: string }) => {
+    const cat = await cond([
+      [
+        (tag, text) => !!tag && !!text,
+        (tag, text) => getCatByTagAndText(tag, text),
+      ],
+      [(tag, text) => !!tag && !text, (tag) => getCatByTag(tag)],
+      [(tag, text) => !tag && !!text, (_, text) => getCatByText(text)],
+      [() => true, () => getCat()],
+    ])(tag, text);
     setCats([cat, ...cats]);
   };
 
