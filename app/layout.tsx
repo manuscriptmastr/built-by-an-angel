@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import styles from "./layout.module.css";
-import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,13 +24,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={styles.body}>
-      <body
-        className={`${styles.body} ${geistSans.variable} ${geistMono.variable}`}
-      >
-        <header className={styles.header}>
-          <img src="/images/logo.webp" alt="Logo" />
-        </header>
+    <html lang="en">
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <header></header>
         <main className={styles.main}>{children}</main>
       </body>
     </html>
